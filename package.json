@@ -1,0 +1,26 @@
+{
+  "name": "musicscraper",
+  "version": "1.0.0",
+  "description": "Scrape music charts",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/De-L3ns/MusicScraper.git"
+  },
+  "author": "L3ns",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/De-L3ns/MusicScraper/issues"
+  },
+  "homepage": "https://github.com/De-L3ns/MusicScraper#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "node-fetch": "^3.0.0"
+  }
+  
+
+}
