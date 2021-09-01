@@ -22,13 +22,24 @@ const URL = 'https://www.ultratop.be/nl/ultratop50'
 const getTop50 = async () => {
     const top50Data = await getRawData(URL);
     const parsedTop50Data = load(top50Data);
-    
     let songList = [];
-    parsedTop50Data(".chart_title").each(function (i, e) {
-        songList[i] = parsedTop50Data(this).text();
-    });
+    let artistList = [];
+    let top50SongsArtists = {};
 
-    console.log(songList);
+    parsedTop50Data('b',".chart_title").each(function (i, e) {
+        artistList[i] = parsedTop50Data(this).text();
+    });
+    
+    parsedTop50Data('a', ".chart_title").each(function (i, e) {
+
+        parsedTop50Data(this).contents().map(function(){
+            songList[i] = (this.type === 'text') ? parsedTop50Data(this).text()+'' : '';
+        }).get().join('');
+        
+    })
+    
+    artistList.forEach((key, i) => top50SongsArtists[key] = songList[i]);
+    console.log(top50SongsArtists);
     
 
     
