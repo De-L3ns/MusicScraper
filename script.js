@@ -39,7 +39,12 @@ const getTop50 = async () => {
     })
     
     artistList.forEach((key, i) => top50SongsArtists[key] = songList[i]);
-    console.log(top50SongsArtists);
+    
+    console.log('Top 50 this week (artist + song)')
+    for (let artist in top50SongsArtists) {
+        
+        console.log(`${artist} - ${top50SongsArtists[artist]}`);
+    }
     
 
     
