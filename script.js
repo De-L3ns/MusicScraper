@@ -21,10 +21,16 @@ const URL = 'https://www.ultratop.be/nl/ultratop50'
 
 const getTop50 = async () => {
     const top50Data = await getRawData(URL);
-    console.log(top50Data);
     const parsedTop50Data = load(top50Data);
-    const top50Songs = parsedTop50Data('div.content.charitem');
-    console.log(top50Songs);
+    
+    let songList = [];
+    parsedTop50Data(".chart_title").each(function (i, e) {
+        songList[i] = parsedTop50Data(this).text();
+    });
+
+    console.log(songList);
+    
+
     
 };
 
