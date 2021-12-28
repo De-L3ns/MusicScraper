@@ -27,8 +27,10 @@ app.set('view engine', 'ejs');
 app.get('', (req, res) => {
 
     res.render('index', {
-        top50: top50ThisWeek,
-        top50prev: top50LastWeek,
+        top50ArtistsThisWeek: top50ArtistsThisWeek,
+        top50SongsThisWeek: top50SongsThisWeek,
+        top50ArtistsLastWeek: top50ArtistsLastWeek,
+        top50SongsLastWeek: top50SongsLastWeek,
     })
     
 
@@ -77,17 +79,25 @@ let urlPrevWeek = `${url}/${year}/${year}${month}${day}`
 
 // Script
 
-const getTop50 = async (url) => {
+const getTop50Artists = async (url) => {
     const top50Data = await getRawData(url);
     const parsedTop50Data = load(top50Data);
-    let songList = [];
     let artistList = [];
-    let top50SongsArtists = {};
     
 
     parsedTop50Data('b',".chart_title").each(function (i, e) {
         artistList[i] = parsedTop50Data(this).text();
     });
+    
+    
+    return artistList;
+    
+};
+
+const getTop50Songs = async (url) => {
+    const top50Data = await getRawData(url);
+    const parsedTop50Data = load(top50Data);
+    let songList = [];
     
     parsedTop50Data('a', ".chart_title").each(function (i, e) {
 
@@ -96,31 +106,14 @@ const getTop50 = async (url) => {
         }).get().join('');
         
     })
-    console.log(artistList.length)
-    console.log(songList.length)
 
-    for (let i = 0; i < artistList.length; i++) {
-
-        top50SongsArtists[artistList[i]] = songList[i];
-
-
-    }
-    artistList.forEach((key, i) => top50SongsArtists[key] = songList[i]);
+    return songList;
     
-    
-    return top50SongsArtists;
-    
-};
+}; 
 
 
-let top50ThisWeek = await getTop50(url);
-let top50LastWeek = await getTop50(urlPrevWeek);
-console.log(top50ThisWeek)
-// console.log('Top 50 (artist + song)')
-//     for (let artist in myData) {
-        
-//         console.log(`${artist} - ${myData[artist]}`);
-//     }
-    
-// console.log(myData);
+let top50ArtistsThisWeek = await getTop50Artists(url);
+let top50SongsThisWeek = await getTop50Songs(url);
+let top50ArtistsLastWeek = await getTop50Artists(urlPrevWeek);
+let top50SongsLastWeek = await getTop50Songs(urlPrevWeek);
 

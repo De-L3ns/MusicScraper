@@ -4,28 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
     <title>Music Scraper</title>
 </head>
 <body>
-    <h1>Top 50 Ultratop</h1>
-
-    <h2>Top 50 This week </h2>
-
-    <ol>
-        <% Object.keys(top50).forEach(function(key) { %>
-            <li> <%= top50[key] %> - <%= key %> </li>
-        <% }) %>
-    </ol>
-    
-    <h2>Top 50 Last week</h2>
-
-    <ol>
-        <% Object.keys(top50prev).forEach(function(key) { %>
-            <li> <%= top50prev[key] %> - <%= key %> </li>
-        <% }) %>
-    </ol>
-
+    <header class=header>
+        <div class=header-title>
         
+            <h1>Top 50 Ultratop</h1>
+
+        </div>
+
+    </header>
+    
+    <div class=container-one>
+        <div class=table-left>
+
+            <h2>This week </h2>
+
+            <ol>
+                <% for (let i = 0; i < top50ArtistsThisWeek.length; i++) { %>
+                    <li class=currentTop50ListItem> <%= top50ArtistsThisWeek[i] %> - <%= top50SongsThisWeek[i] %> </li>
+                <% } %>
+            </ol>
+
+        </div>
+
+        <div class=table-right>
+
+            <h2>Last week</h2>
+
+            <ol>
+                <% for (let i = 0; i < top50ArtistsLastWeek.length; i++) { %>
+                    <li class=lastTop50ListItem> <%= top50ArtistsLastWeek[i] %> - <%= top50SongsLastWeek[i] %> </li>
+                <% } %>
+            </ol>
+
+        </div>
+    </div>
+    
+    <footer class="footer"f>
+
+        <div class=footer-disc>
+        
+            <p>Disclaimer placeholder</p>
+
+        </div>
+
+        <div class=footer-icons>
+
+
+        </div>
+
+
+    </footer>
 </body>
-<script src=script.js></script>
+<script src="js/script.js"></script>
 </html>

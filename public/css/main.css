@@ -1,0 +1,56 @@
+
+@media(min-width:760px) {
+
+    .container-one {
+        display: flex;
+        justify-content: space-around;
+    
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .footer {
+
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+}
+
+
+
+.header-title {
+    flex-basis: 90%;
+
+}
+
+.container-one div, .header div, .footer div {
+
+    border: 1px solid;
+    padding: 10px;
+}
+
+.table-left {
+    flex-basis: 40%;
+    
+
+}
+
+.table-right {
+    flex-basis: 40%;
+    
+}
+
+.footer-disc {
+
+    flex-basis: 40%;
+}
+
+.footer-icons {
+
+    flex-basis: 40%;
+}
