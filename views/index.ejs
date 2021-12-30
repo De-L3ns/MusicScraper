@@ -5,19 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- icons stylesheet  -->
     <title>Music Scraper</title>
 </head>
 <body>
     <header class=header>
         <div class=header-title>
         
-            <h1>Top 50 Ultratop</h1>
+            <h1>MusicScraper</h1>
 
         </div>
 
     </header>
+
     
-    <div class=container-one>
+
+    <div class="container-one">
+
+        <div class="box-left">
+
+            <h2>New this week</h2>
+
+            <ol id="new">
+
+            </ol>
+
+        </div>
+
+        <div class="box-middle">
+
+            <h2>Top growers</h2>
+
+            <ol id="top">
+                
+            </ol>
+            
+        </div>
+
+        <div class="box-right">
+
+            <h2>Dropped down this week</h2>
+
+            <ol id="dropped">
+                
+            </ol>
+            
+        </div>
+
+
+
+    </div>
+
+
+    
+    <div class=container-two>
         <div class=table-left>
 
             <h2>This week </h2>
@@ -27,6 +69,26 @@
                     <li class=currentTop50ListItem> <%= top50ArtistsThisWeek[i] %> - <%= top50SongsThisWeek[i] %> </li>
                 <% } %>
             </ol>
+<!-- 
+            TABLE IDEA
+            <h2>this week</h2>
+            <table>
+                <tr>
+                    <th>Spot</th>
+                    <th>Artist + song</th>
+                </tr>
+
+                <% for (let i = 0; i < top50ArtistsThisWeek.length; i++) { %>
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td class=currentTop50ListItem> <%= top50ArtistsThisWeek[i] %> - <%= top50SongsThisWeek[i] %> </td>
+                    </tr>
+                <% } %>
+                
+
+
+
+            </table> -->
 
         </div>
 
@@ -46,13 +108,15 @@
     <footer class="footer"f>
 
         <div class=footer-disc>
-        
-            <p>Disclaimer placeholder</p>
+            <p>Disclaimer:</p>
+            <p>This webpage was created purely as a project - data for the tables is extracted from https://www.ultratop.be and https://www.shazam.com/gb </p>
 
         </div>
 
         <div class=footer-icons>
-
+            <a class=icon href='https://github.com/De-L3ns'><i 
+                class="fa fa-github" style="font-size:36px"></i></a><a href='https://www.linkedin.com/in/laurens-viaene-90864a1b2/'><i 
+                    class="fa fa-linkedin-square" style="font-size:36px"></i></a>
 
         </div>
 

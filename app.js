@@ -77,7 +77,7 @@ let urlPrevWeek = `${url}/${year}/${year}${month}${day}`
 
 
 
-// Script
+// Script functions
 
 const getTop50Artists = async (url) => {
     const top50Data = await getRawData(url);
@@ -110,7 +110,6 @@ const getTop50Songs = async (url) => {
     return songList;
     
 }; 
-
 
 let top50ArtistsThisWeek = await getTop50Artists(url);
 let top50SongsThisWeek = await getTop50Songs(url);

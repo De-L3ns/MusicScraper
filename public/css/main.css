@@ -1,7 +1,14 @@
 
 @media(min-width:760px) {
 
+
     .container-one {
+        display: flex;
+        justify-content: space-around;
+    
+    }
+
+    .container-two {
         display: flex;
         justify-content: space-around;
     
@@ -9,48 +16,156 @@
 
     .header {
         display: flex;
+        border-radius: 25px;
         justify-content: space-around;
+        background-color: black;
     }
 
     .footer {
 
         display: flex;
+        border-radius: 25px;
         justify-content: space-around;
+        background-color: black;
 
     }
 
+    
+
+
 }
 
+body {
+    
+    
+    background-color: #313233;
+    
+}
 
+.header h1 {
+
+    font: 35px helvetica;
+    color: white;
+}
 
 .header-title {
     flex-basis: 90%;
 
 }
 
-.container-one div, .header div, .footer div {
 
-    border: 1px solid;
-    padding: 10px;
+
+
+.container-one h2, .container-two h2 {
+
+    font: 28px helvetica bold;
+    
+
+}
+
+.container-one li, .container-two li {
+
+    font: 20px helvetica;
+    
+    
+
+}
+
+.container-one ol, .container-two ol {
+
+    font: 20px helvetica;
+    
+    margin-left: 10px;
+    
+
+}
+
+
+
+.box-left h2, .box-right h2, .box-middle h2 {
+
+    text-align: center;
+}
+
+.table-left h2, .table-right h2 {
+
+    margin-left: 10px;
+
+}
+
+.box-left {
+
+    flex: 2;
+    margin: 10px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-color: #71c5db;
+    
+
+
+}
+
+.box-middle {
+
+    flex: 2;
+    margin: 10px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-color: #71c5db;
+    
+
+
+}
+
+.box-right {
+
+    flex: 2;
+    margin: 10px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-color: #71c5db;
+    
+    
+    
+
+
 }
 
 .table-left {
-    flex-basis: 40%;
+    
+    flex: 1;
+    margin: 10px;
+    border-radius: 25px;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    background-color: #71c5db;
     
 
 }
 
 .table-right {
-    flex-basis: 40%;
+    flex: 1;
+    margin: 10px;
+    border-radius: 25px;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    background-color: #71c5db;
     
 }
 
 .footer-disc {
 
-    flex-basis: 40%;
+    flex: 1;
+    font: 12px helvetica;
+    color: white;
+    margin: 10px;
+    
 }
 
 .footer-icons {
 
-    flex-basis: 40%;
+    margin: 10px;
+    color: #71c5db;
 }
+
+
+
+
