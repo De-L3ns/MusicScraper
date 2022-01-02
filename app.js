@@ -60,7 +60,7 @@ const url = 'https://www.ultratop.be/nl/ultratop50'
 
 // extract the previous date from the webpage to generate the URL for last week
 const top50Data = await getRawData(url);
-const parsedTop50Data = load(top50Data);
+const parsedTop50Data = load(top50Data, { decodeEntities: false });
 let dates = [];
 
 parsedTop50Data('option',".content").each(function (i, e) {
@@ -81,7 +81,7 @@ let urlPrevWeek = `${url}/${year}/${year}${month}${day}`
 
 const getTop50Artists = async (url) => {
     const top50Data = await getRawData(url);
-    const parsedTop50Data = load(top50Data);
+    const parsedTop50Data = load(top50Data, { decodeEntities: false });
     let artistList = [];
     
 
@@ -96,7 +96,7 @@ const getTop50Artists = async (url) => {
 
 const getTop50Songs = async (url) => {
     const top50Data = await getRawData(url);
-    const parsedTop50Data = load(top50Data);
+    const parsedTop50Data = load(top50Data, { decodeEntities: false });
     let songList = [];
     
     parsedTop50Data('a', ".chart_title").each(function (i, e) {

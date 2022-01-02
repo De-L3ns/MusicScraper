@@ -29,9 +29,14 @@
 
                 <h2>New this week</h2>
 
-                <ol id="new">
+                <table id="new">
+                    <tr>
+                        <th>Spot</th>
+                        <th>Artist + song</th>
+                        <th>Copy</th>
+                    </tr>
 
-                </ol>
+                </table>
 
             </div>
 
@@ -39,9 +44,14 @@
 
                 <h2>Top growers</h2>
 
-                <ol id="top">
-                    
-                </ol>
+                <table id="top">
+                    <tr>
+                        <th>Spot</th>
+                        <th>Artist + song</th>
+                        <th>Copy</th>
+                    </tr>
+
+                </table>
                 
             </div>
 
@@ -49,9 +59,15 @@
 
                 <h2>Dropped down this week</h2>
 
-                <ol id="dropped">
-                    
-                </ol>
+                <table id="dropped">
+                    <tr>
+                        <th>Spot</th>
+                        <th>Artist + song</th>
+                        
+                    </tr>
+
+
+                </table>
                 
             </div>
 
@@ -65,33 +81,37 @@
         <div class=container-two>
             <div class=table-left>
 
-                <h2>This week </h2>
+                <!-- <h2>This week </h2>
 
                 <ol>
                     <% for (let i = 0; i < top50ArtistsThisWeek.length; i++) { %>
                         <li class=currentTop50ListItem> <%= top50ArtistsThisWeek[i] %> - <%= top50SongsThisWeek[i] %> </li>
                     <% } %>
-                </ol>
-                <!-- 
-                TABLE IDEA
-                <h2>this week</h2>
+                </ol> -->
+                
+                <!-- TABLE IDEA -->
+                <h2>This week</h2>
                 <table>
                     <tr>
                         <th>Spot</th>
                         <th>Artist + song</th>
+                        <th>Ranking</th>
+                        <th>Copy</th>
                     </tr>
 
                     <% for (let i = 0; i < top50ArtistsThisWeek.length; i++) { %>
                         <tr>
                             <td><%= i + 1 %></td>
-                            <td class=currentTop50ListItem> <%= top50ArtistsThisWeek[i] %> - <%= top50SongsThisWeek[i] %> </td>
+                            <td id=copyText class=currentTop50ListItem> <%= top50ArtistsThisWeek[i] %> - <%= top50SongsThisWeek[i] %> </td>
+                            <td class="ranking"></td>
+                            <td><button class="copyButtonCurrent"><i class="fa fa-copy"></i></button></td>
                         </tr>
                     <% } %>
                     
 
 
 
-                </table> -->
+                </table>
 
             </div>
 
@@ -99,11 +119,31 @@
 
                 <h2>Last week</h2>
 
-                <ol>
+                <table>
+                    <tr>
+                        <th>Spot</th>
+                        <th>Artist + song</th>
+                        
+                    </tr>
+
+                    <% for (let i = 0; i < top50ArtistsLastWeek.length; i++) { %>
+                        <tr>
+                            <td><%= i + 1 %></td>
+                            <td class=lastTop50ListItem> <%= top50ArtistsLastWeek[i] %> - <%= top50SongsLastWeek[i] %> </td>
+                            
+                        </tr>
+                    <% } %>
+                    
+
+
+
+                </table>
+
+                <!-- <ol>
                     <% for (let i = 0; i < top50ArtistsLastWeek.length; i++) { %>
                         <li class=lastTop50ListItem> <%= top50ArtistsLastWeek[i] %> - <%= top50SongsLastWeek[i] %> </li>
                     <% } %>
-                </ol>
+                </ol> -->
 
             </div>
         </div>

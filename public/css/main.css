@@ -18,7 +18,7 @@
         display: flex;
         border-radius: 25px;
         justify-content: space-around;
-        background-color: black;
+        background-color: #282828;
     }
 
     .footer {
@@ -26,7 +26,7 @@
         display: flex;
         border-radius: 25px;
         justify-content: space-around;
-        background-color: black;
+        background-color: #282828;
 
     }
 
@@ -63,19 +63,14 @@ body {
 
 }
 
-.container-one li, .container-two li {
+
+
+.container-one table, .container-two table {
 
     font: 20px helvetica;
-    
-    
-
-}
-
-.container-one ol, .container-two ol {
-
-    font: 20px helvetica;
-    
-    margin-left: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-align: center;
     
 
 }
@@ -131,6 +126,10 @@ body {
 
 }
 
+table, th, td {
+    border:1px solid black;
+  }
+
 .table-left {
     
     flex: 1;
@@ -166,7 +165,7 @@ body {
     color: #71c5db;
 }
 
-.drop-down {
+/* .drop-down {
     background-color: #777;
     color: white;
     cursor: pointer;
@@ -188,5 +187,5 @@ body {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color: #f1f1f1;
-  }
+  } */
 
