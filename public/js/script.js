@@ -8,6 +8,10 @@ let olNew = document.getElementById("new");
 let olGrowth = document.getElementById("top");
 let olDropped = document.getElementById("dropped");
 
+let dropDown = document.getElementsByClassName("drop-down");
+
+
+
 
 
 for (let i = 0; i < lastTop50.length; i++) {
@@ -90,3 +94,16 @@ for (let i = 0; i < currentTop50.length; i++) {
 
 } 
 
+
+// for (let i = 0; i < dropDown.length; i++) {
+//     dropDown[i].addEventListener("click", function() {
+//       this.classList.toggle("active");
+//       let content = this.nextElementSibling;
+//       if (content.style.maxHeight){
+//         content.style.maxHeight = null;
+//       } else {
+//         content.style.maxHeight = content.scrollHeight + "px";
+//       } 
+//     });
+
+// }
