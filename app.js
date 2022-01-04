@@ -5,6 +5,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 import fetch from 'node-fetch'; // gets the node-fetch package
 import { load } from 'cheerio'; // gets the cheerio package
+import moment from 'moment';
 
 // Makes __dirname work
 import path from 'path';
@@ -68,13 +69,35 @@ parsedTop50Data('option',".content").each(function (i, e) {
 });
 
 let datePrevWeek = dates[1];
+let dateThisWeek = dates[0];
+
+// gather dates from previous week (only work if there are allready dates in the list)
+// does not work first week of the year
 let day = datePrevWeek.split('/')[0];
 let month = datePrevWeek.split('/')[1];
 let year = datePrevWeek.split('/')[2];
 
-//website url from last week
+// get backup dates from current year to perform calculations to get the date prev week 
+// backup for first week of the year
+let dayBackup = dateThisWeek.split('/')[0];
+let monthBackup = dateThisWeek.split('/')[1];
+let yearBackup = dateThisWeek.split('/')[2];
+let currentWeek = new Date(`${yearBackup}-${monthBackup}-${dayBackup}`);
+let lastWeek = new Date();
+lastWeek.setDate(currentWeek.getDate() - 7); // decrease 7 days from the current date
+let lastWeekFormatted = moment(lastWeek).format('YYYYMMDD'); // format to string with moment method
+
+// Website url from last week
 let urlPrevWeek = `${url}/${year}/${year}${month}${day}`
 
+// Alternative year gathering incase of year change
+// If one of the dates is undefined (no data) then we use the alternative method to construct the URL
+
+if (day === undefined || month === undefined || year === undefined ) { // === checks for the type of the variable -> undefined = none
+
+    urlPrevWeek = `${url}/${lastWeek.getFullYear()}/${lastWeekFormatted}`;
+
+}
 
 
 // Script functions
