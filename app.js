@@ -27,6 +27,7 @@ app.set('view engine', 'ejs');
 
 app.get('', (req, res) => {
 
+
     res.render('index', {
         top50ArtistsThisWeek: top50ArtistsThisWeek,
         top50SongsThisWeek: top50SongsThisWeek,
@@ -34,7 +35,7 @@ app.get('', (req, res) => {
         top50SongsLastWeek: top50SongsLastWeek,
     })
     
-
+    
 });
 
 // Listen on port 3000
@@ -61,7 +62,7 @@ const url = 'https://www.ultratop.be/nl/ultratop50'
 
 // extract the previous date from the webpage to generate the URL for last week
 const top50Data = await getRawData(url);
-const parsedTop50Data = load(top50Data, { decodeEntities: false });
+const parsedTop50Data = load(top50Data, { decodeEntities: true }, {encoding: null});
 let dates = [];
 
 parsedTop50Data('option',".content").each(function (i, e) {
@@ -110,6 +111,7 @@ const getTop50Artists = async (url) => {
 
     parsedTop50Data('b',".chart_title").each(function (i, e) {
         artistList[i] = parsedTop50Data(this).text();
+        
     });
     
     

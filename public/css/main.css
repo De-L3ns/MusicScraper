@@ -16,17 +16,15 @@
 
     .header {
         display: flex;
-        border-radius: 25px;
         justify-content: space-around;
-        background-color: #282828;
+        
     }
 
     .footer {
 
         display: flex;
-        border-radius: 25px;
         justify-content: space-around;
-        background-color: #282828;
+        
 
     }
 
@@ -35,17 +33,31 @@
 
 }
 
+.header, .footer {
+
+    background-color: #E8E8E8;
+}
+
+
 body {
     
     
-    background-color: #313233;
+    background-color: #FFFFFF;
     
+}
+
+.title {
+
+    font: 30px helvetica bold;
+    color: #1490D3;
+    text-align: center;
+
 }
 
 .header h1 {
 
-    font: 35px helvetica;
-    color: white;
+    font: 35px helvetica bold;
+    color: #1490D3;
 }
 
 .header-title {
@@ -53,11 +65,17 @@ body {
 
 }
 
+button {
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background: none;
+}
 
 
 
 .container-one h2, .container-two h2 {
-
+    text-align: center;
     font: 28px helvetica bold;
     
 
@@ -66,7 +84,7 @@ body {
 
 
 .container-one table, .container-two table {
-
+    
     font: 20px helvetica;
     margin: 0 auto;
     margin-bottom: 10px;
@@ -78,13 +96,17 @@ body {
 
 
 .box-left h2, .box-right h2, .box-middle h2 {
-
-    text-align: center;
+    
+    margin-left: 10px;
+    color: #1490D3;
+    background-color: white;
 }
 
 .table-left h2, .table-right h2 {
 
     margin-left: 10px;
+    color: #1490D3;
+    background-color:white;
 
 }
 
@@ -93,10 +115,8 @@ body {
     flex: 2;
     margin: 10px;
     border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    background-color: #71c5db;
     
-
+    
 
 }
 
@@ -105,8 +125,7 @@ body {
     flex: 2;
     margin: 10px;
     border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    background-color: #71c5db;
+    
     
 
 
@@ -117,8 +136,8 @@ body {
     flex: 2;
     margin: 10px;
     border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    background-color: #71c5db;
+    
+    
     
     
     
@@ -130,13 +149,29 @@ table, th, td {
     border:1px solid black;
   }
 
+
+table th {
+
+    background-color: #1490D3;
+    color: white;
+}
+
+/* Zebra striping */
+table tr:nth-child(odd) {
+
+    background-color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #E8E8E8;
+}
+
 .table-left {
     
     flex: 1;
     margin: 10px;
     border-radius: 25px;
-    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-    background-color: #71c5db;
+    background-color: white;
     
 
 }
@@ -145,8 +180,8 @@ table, th, td {
     flex: 1;
     margin: 10px;
     border-radius: 25px;
-    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-    background-color: #71c5db;
+    /* box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em; */
+    background-color: white;
     
 }
 
@@ -154,7 +189,7 @@ table, th, td {
 
     flex: 1;
     font: 12px helvetica;
-    color: white;
+    color: #1490D3;
     margin: 10px;
     
 }
@@ -162,7 +197,7 @@ table, th, td {
 .footer-icons {
 
     margin: 10px;
-    color: #71c5db;
+    color: #1490D3;
 }
 
 /* .drop-down {
