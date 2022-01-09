@@ -33,6 +33,11 @@
 
 }
 
+.html {
+
+    -webkit-font-smoothing: antialiased;
+}
+
 .header, .footer {
 
     background-color: #E8E8E8;
@@ -48,7 +53,8 @@ body {
 
 .title {
 
-    font: 30px helvetica bold;
+    font: 30px helvetica;
+    font-weight: bold;
     color: #1490D3;
     text-align: center;
 
@@ -56,7 +62,8 @@ body {
 
 .header h1 {
 
-    font: 35px helvetica bold;
+    font: 35px helvetica;
+    font-weight: bold;
     color: #1490D3;
 }
 
@@ -76,7 +83,8 @@ button {
 
 .container-one h2, .container-two h2 {
     text-align: center;
-    font: 28px helvetica bold;
+    font: 28px helvetica;
+    font-weight: bold;
     
 
 }
