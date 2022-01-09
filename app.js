@@ -25,15 +25,19 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 
 
+
 app.get('', (req, res) => {
 
-
-    res.render('index', {
-        top50ArtistsThisWeek: top50ArtistsThisWeek,
-        top50SongsThisWeek: top50SongsThisWeek,
-        top50ArtistsLastWeek: top50ArtistsLastWeek,
-        top50SongsLastWeek: top50SongsLastWeek,
-    })
+    res
+        
+        
+        .render('index', {
+            top50ArtistsThisWeek: top50ArtistsThisWeek,
+            top50SongsThisWeek: top50SongsThisWeek,
+            top50ArtistsLastWeek: top50ArtistsLastWeek,
+            top50SongsLastWeek: top50SongsLastWeek,
+        })
+        
     
     
 });
