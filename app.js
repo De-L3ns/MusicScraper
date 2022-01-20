@@ -25,23 +25,6 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 
 
-
-app.get('', (req, res) => {
-
-    res
-        
-        
-        .render('index', {
-            top50ArtistsThisWeek: top50ArtistsThisWeek,
-            top50SongsThisWeek: top50SongsThisWeek,
-            top50ArtistsLastWeek: top50ArtistsLastWeek,
-            top50SongsLastWeek: top50SongsLastWeek,
-        })
-        
-    
-    
-});
-
 // Listen on port 3000
 
 app.listen(port, () => console.info(`listening on port ${port}`));
@@ -145,3 +128,20 @@ let top50SongsThisWeek = await getTop50Songs(url);
 let top50ArtistsLastWeek = await getTop50Artists(urlPrevWeek);
 let top50SongsLastWeek = await getTop50Songs(urlPrevWeek);
 
+// Render the scraped data to EJS.
+
+app.get('', (req, res) => {
+
+    res
+        
+        
+        .render('index', {
+            top50ArtistsThisWeek: top50ArtistsThisWeek,
+            top50SongsThisWeek: top50SongsThisWeek,
+            top50ArtistsLastWeek: top50ArtistsLastWeek,
+            top50SongsLastWeek: top50SongsLastWeek,
+        })
+        
+    
+    
+});
