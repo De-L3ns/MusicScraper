@@ -81,8 +81,10 @@
                 <table>
                     <tr>
                         <th>Rank</th>
+                        
                         <th>Artist - Track</th>
-                        <th>Movement</th>
+                        <th>Weeks</th>
+                        <th>+/-</th>
                         <th>Copy</th>
                     </tr>
 
@@ -90,6 +92,7 @@
                         <tr>
                             <td><%= i + 1 %></td>
                             <td id=copyText class=currentTop50ListItem> <%= top50ArtistsThisWeek[i] %> - <%= top50SongsThisWeek[i] %> </td>
+                            <td><%= getWeeks[i] %></td>
                             <td class="ranking"></td>
                             <td><button class="copyButtonCurrent"><i class="fa fa-copy"></i></button></td>
                         </tr>
